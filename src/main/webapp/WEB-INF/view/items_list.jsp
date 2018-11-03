@@ -2,13 +2,13 @@
 
 <html>
 <head>
-    <title>Todo Items</title>
+    <title>Exercise Tracker</title>
 </head>
 <body>
     <div align="center">
         <table border="1" cellpadding="5">
             <caption>
-                <h2>Todo Items</h2>
+                <h2>Generator</h2>
             </caption>
             <tr>
                 <th>Title</th>
