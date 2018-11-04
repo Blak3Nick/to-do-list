@@ -3,6 +3,7 @@ package academy.learnprogramming.model;
 import lombok.NonNull;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,17 +18,28 @@ public class ExerciseData {
     //constructors
     public ExerciseData() {
         //add dummy data
-        addExerciseObject(new ExerciseObject("first", "first details", LocalDate.now()));
-        addExerciseObject(new ExerciseObject("second", "second details", LocalDate.now()));
-        addExerciseObject(new ExerciseObject("third", "third details", LocalDate.now()));
+
+        ArrayList<Integer> sets = new ArrayList<Integer>();
+        sets.add(1);
+        sets.add(2);
+        ArrayList<Integer> reps = new ArrayList<Integer>();
+        reps.add(5);
+        reps.add(5);
+        ArrayList<Double> weights = new ArrayList<Double>();
+        weights.add(150.0);
+        weights.add(150.0);
+        SetRepModel setRepModel1 = new SetRepModel(sets,reps,weights);
+        ExerciseObject exerciseObject = new ExerciseObject(idValue,setRepModel1,LocalDateTime.now());
+
+        addExerciseObject(exerciseObject);
+
     }
     // public methods
-    public List<ExerciseObject> getItems() {
+    public List<ExerciseObject> getExercises() {
         return Collections.unmodifiableList(exercises);
     }
 
     public void addExerciseObject(@NonNull ExerciseObject toAdd) {
-        toAdd.;
         exercises.add(toAdd);
         idValue ++;
     }
@@ -43,7 +55,7 @@ public class ExerciseData {
         }
     }
 
-    public ExerciseObject getItem(int id) {
+    public ExerciseObject getExerciseObject(int id) {
         for (ExerciseObject exerciseObject: exercises) {
             if(exerciseObject.getId() == id) {
                 return exerciseObject;
@@ -52,14 +64,14 @@ public class ExerciseData {
         return null;
     }
 
-    public void updateItem(@NonNull ExerciseObject toUpdate) {
-        ListIterator<ExerciseObject> itemIterator = items.listIterator();
-        while (itemIterator.hasNext()) {
+    public void updateExerciseObject(@NonNull ExerciseObject toUpdate, int id) {
+        ListIterator<ExerciseObject> exerciseObjectListIterator = exercises.listIterator();
+        while (exerciseObjectListIterator.hasNext()) {
 
-            ExerciseObject item = itemIterator.next();
+            ExerciseObject exerciseObject = exerciseObjectListIterator.next();
 
-            if(item.equals(toUpdate)) {
-                itemIterator.set(toUpdate);
+            if(exerciseObject.getId() == toUpdate.getId()) {
+                exerciseObject.updateExerciseObject(toUpdate.getSetRepModel(), toUpdate.getDateTime());
                 break;
             }
 

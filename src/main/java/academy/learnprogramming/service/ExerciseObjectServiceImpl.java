@@ -5,6 +5,8 @@ import academy.learnprogramming.model.ExerciseObject;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ExerciseObjectServiceImpl implements ExerciseObjectService {
 
@@ -23,16 +25,17 @@ public class ExerciseObjectServiceImpl implements ExerciseObjectService {
 
     @Override
     public ExerciseObject getExerciseObject(int id) {
-        return null;
+        return exerciseData.getExerciseObject(id);
     }
 
     @Override
     public void updateExerciseObject(ExerciseObject item) {
+        exerciseData.updateExerciseObject(item, item.getId());
 
     }
 
     @Override
-    public ExerciseData getData() {
-        return null;
+    public List<ExerciseObject> getExerciseData() {
+        return exerciseData.getExercises();
     }
 }

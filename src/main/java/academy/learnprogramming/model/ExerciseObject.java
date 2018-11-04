@@ -23,6 +23,9 @@ public class ExerciseObject {
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public SetRepModel getSetRepModel() {
         return setRepModel;
@@ -37,6 +40,10 @@ public class ExerciseObject {
     }
 
     public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+    public void updateExerciseObject(SetRepModel setRepModel, LocalDateTime dateTime) {
+        this.setRepModel = setRepModel;
         this.dateTime = dateTime;
     }
 }
