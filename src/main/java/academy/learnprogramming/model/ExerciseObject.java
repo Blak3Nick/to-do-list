@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @EqualsAndHashCode(of = "id")
-public class TodoItem {
+public class ExerciseObject {
     //fields
     private int id;
     private String title;
@@ -15,7 +15,7 @@ public class TodoItem {
     private LocalDate deadline;
 
     //constructors
-    public TodoItem(String title, String details, LocalDate deadline) {
+    public ExerciseObject(String title, String details, LocalDate deadline) {
         this.title = title;
         this.details = details;
         this.deadline = deadline;
