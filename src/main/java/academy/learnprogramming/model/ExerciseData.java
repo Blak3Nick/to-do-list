@@ -12,23 +12,23 @@ public class ExerciseData {
 
     //fields
     private static int idValue =1;
-    private final List<ExerciseObject> items = new ArrayList<>();
+    private final List<ExerciseObject> exercises = new ArrayList<>();
 
     //constructors
     public ExerciseData() {
         //add dummy data
-        addItem(new ExerciseObject("first", "first details", LocalDate.now()));
-        addItem(new ExerciseObject("second", "second details", LocalDate.now()));
-        addItem(new ExerciseObject("third", "third details", LocalDate.now()));
+        addExerciseObject(new ExerciseObject("first", "first details", LocalDate.now()));
+        addExerciseObject(new ExerciseObject("second", "second details", LocalDate.now()));
+        addExerciseObject(new ExerciseObject("third", "third details", LocalDate.now()));
     }
     // public methods
     public List<ExerciseObject> getItems() {
-        return Collections.unmodifiableList(items);
+        return Collections.unmodifiableList(exercises);
     }
 
-    public void addItem(@NonNull ExerciseObject toAdd) {
+    public void addExerciseObject(@NonNull ExerciseObject toAdd) {
         toAdd.setId(idValue);
-        items.add(toAdd);
+        exercises.add(toAdd);
         idValue ++;
     }
     public void removeItem(int id) {
