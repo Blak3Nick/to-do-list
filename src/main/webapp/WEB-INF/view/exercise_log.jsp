@@ -14,11 +14,11 @@
                 <th>Title</th>
                 <th>Deadline</th>
             </tr>
-            <c:forEach var="exercise" exercises="${exerciseData.exercises}">
-                <tr>
-                    <td><c:out value="${exercise.id}"/></td>
-                    <td><c:out value="${exercise.deadline}"/></td>
-                </tr>
+            <c:forEach var="exercise" items="${exerciseData.exercises}">
+                <td>
+                    <c:out value="${exercise.id}"/>
+                    <c:out value="${exercise.setRepModel.getSets()}"/>
+                </td>
             </c:forEach>
         </table>
     </div>
