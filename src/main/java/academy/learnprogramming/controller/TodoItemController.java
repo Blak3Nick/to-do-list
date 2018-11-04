@@ -3,6 +3,7 @@ package academy.learnprogramming.controller;
 import academy.learnprogramming.model.TodoData;
 import academy.learnprogramming.model.TodoItem;
 import academy.learnprogramming.service.TodoItemService;
+import academy.learnprogramming.util.AttributeNames;
 import academy.learnprogramming.util.Mappings;
 import academy.learnprogramming.util.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class TodoItemController {
         return ViewNames.ITEMS_LIST;
     }
     @PostMapping(Mappings.ADD_ITEM)
-    public String processItem(@ModelAttribute TodoItem todoItem) {
+    public String processItem(@ModelAttribute(AttributeNames.TODO_ITEM) TodoItem todoItem) {
         return "redirect:/" + Mappings.ITEMS;
     }
 }
