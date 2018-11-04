@@ -5,8 +5,8 @@ import academy.learnprogramming.model.ExerciseObject;
 
 public interface ExerciseObjectService {
 
-    void addItem(ExerciseObject exerciseObject);
-    void removeItem(int id);
+    void addExerciseObject(ExerciseObject exerciseObject);
+    void removeExerciseObject(int id);
     ExerciseObject getExerciseObject(int id);
     void updateExerciseObject(ExerciseObject item);
     ExerciseData getData();

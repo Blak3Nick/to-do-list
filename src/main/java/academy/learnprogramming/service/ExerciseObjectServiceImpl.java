@@ -2,19 +2,23 @@ package academy.learnprogramming.service;
 
 import academy.learnprogramming.model.ExerciseData;
 import academy.learnprogramming.model.ExerciseObject;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ExerciseObjectServiceImpl implements ExerciseObjectService {
 
-    @Override
-    public void addItem(ExerciseObject exerciseObject) {
+    @Getter
+    private final ExerciseData exerciseData = new ExerciseData();
 
+    @Override
+    public void addExerciseObject(ExerciseObject exerciseObject) {
+        exerciseData.addExerciseObject(exerciseObject);
     }
 
     @Override
-    public void removeItem(int id) {
-
+    public void removeExerciseObject(int id) {
+        exerciseData.removeExerciseObject(id);
     }
 
     @Override

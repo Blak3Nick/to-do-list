@@ -27,26 +27,26 @@ public class ExerciseData {
     }
 
     public void addExerciseObject(@NonNull ExerciseObject toAdd) {
-        toAdd.setId(idValue);
+        toAdd.;
         exercises.add(toAdd);
         idValue ++;
     }
-    public void removeItem(int id) {
-        ListIterator<ExerciseObject> itemIterator = items.listIterator();
+    public void removeExerciseObject(int id) {
+        ListIterator<ExerciseObject> exerciseObjectListIteratorIterator = exercises.listIterator();
 
-        while (itemIterator.hasNext()) {
-            ExerciseObject item = itemIterator.next();
-            if(item.getId() == id) {
-                itemIterator.remove();
+        while (exerciseObjectListIteratorIterator.hasNext()) {
+            ExerciseObject exercise = exerciseObjectListIteratorIterator.next();
+            if(exercise.getId() == id) {
+                exerciseObjectListIteratorIterator.remove();
                 break;
             }
         }
     }
 
     public ExerciseObject getItem(int id) {
-        for (ExerciseObject item: items) {
-            if(item.getId() == id) {
-                return item;
+        for (ExerciseObject exerciseObject: exercises) {
+            if(exerciseObject.getId() == id) {
+                return exerciseObject;
             }
         }
         return null;

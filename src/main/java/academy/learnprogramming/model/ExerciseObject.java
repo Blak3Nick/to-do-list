@@ -2,23 +2,41 @@ package academy.learnprogramming.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
-@EqualsAndHashCode(of = "id")
 public class ExerciseObject {
-    //fields
     private int id;
-    private String title;
-    private String details;
-    private LocalDate deadline;
+    private SetRepModel setRepModel;
+    private LocalDateTime dateTime;
 
-    //constructors
-    public ExerciseObject(String title, String details, LocalDate deadline) {
-        this.title = title;
-        this.details = details;
-        this.deadline = deadline;
+    public ExerciseObject(int id, SetRepModel setRepModel, LocalDateTime dateTime) {
+        this.id = id;
+        this.setRepModel = setRepModel;
+        this.dateTime = dateTime;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public SetRepModel getSetRepModel() {
+        return setRepModel;
+    }
+
+    public void setSetRepModel(SetRepModel setRepModel) {
+        this.setRepModel = setRepModel;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
 }
