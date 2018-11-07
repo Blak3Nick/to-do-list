@@ -11,20 +11,20 @@
             <tr>
                 <td><label>ID</label></td>
                 <td>
-                    <form:input path="id" disabled="true" />
+                    <c:out value="${todoItem.id}"/>
                 </td>
             </tr>
             <tr>
                 <td><label>Title</label></td>
-                <td><form:input path="title"/></td>
+                <c:out value="${todoItem.title}"/>
             </tr>
             <tr>
                 <td><label>Deadline</label></td>
-                <td><form:input path="deadline"/></td>
+                <c:out value="${todoItem.deadline}"/>
             </tr>
             <tr>
                 <td><label>Details</label></td>
-                <td><form:textarea path="details"/></td>
+                <c:out value="${todoItem.details}"/>
             </tr>
         </table>
     </div>
