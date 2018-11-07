@@ -16,17 +16,25 @@
             </tr>
             <tr>
                 <td><label>Title</label></td>
-                <c:out value="${todoItem.title}"/>
+                <td>
+                    <c:out value="${todoItem.title}"/>
+                </td>
             </tr>
             <tr>
                 <td><label>Deadline</label></td>
-                <c:out value="${todoItem.deadline}"/>
+                <td>
+                    <c:out value="${todoItem.deadline}"/>
+                </td>
             </tr>
             <tr>
                 <td><label>Details</label></td>
-                <c:out value="${todoItem.details}"/>
+                <td>
+                    <c:out value="${todoItem.details}"/>
+                </td>
             </tr>
         </table>
+        <c:url var="tableUrl" value="${Mappings.ITEMS}"/>
+        <a href="${tableUrl}">Show Table</a>
     </div>
 </body>
 </html>
