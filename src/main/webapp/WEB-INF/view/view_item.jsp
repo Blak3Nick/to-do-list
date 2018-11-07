@@ -4,11 +4,11 @@
 
 <html>
 <head>
-    <title>Add Items</title>
+    <title>View Item</title>
 </head>
 <body>
     <div align="center">
-        <form:form method="POST" modelAttribute="${AttributeNames.TODO_ITEM}">
+
             <table>
                 <tr>
                     <td><label>ID</label></td>
@@ -32,7 +32,6 @@
                     <td><input type="submit" value="Submit"/></td>
                 </tr>
             </table>
-        </form:form>
     </div>
 </body>
 </html>
